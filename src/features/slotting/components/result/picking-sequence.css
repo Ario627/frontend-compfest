@@ -1,0 +1,109 @@
+.ps-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.ps-title {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ps-empty {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.ps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.ps-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.ps-item:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-default);
+}
+
+.ps-item--highlighted {
+    background-color: rgba(242, 183, 5, 0.1);
+    border-color: var(--border-accent);
+}
+
+.ps-item__number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-input);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.ps-item--highlighted .ps-item__number {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.ps-item__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.ps-item__product {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ps-item__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.ps-item__location svg {
+    flex-shrink: 0;
+}
+
+.ps-item:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 1px;
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-default);
+}

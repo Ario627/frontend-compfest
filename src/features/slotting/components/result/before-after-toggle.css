@@ -1,0 +1,35 @@
+.ba-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.ba-toggle__btn {
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: var(--bg-surface);
+    border: none;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.ba-toggle__btn:first-child {
+    border-right: 1px solid var(--border-default);
+}
+
+.ba-toggle__btn:hover:not(.ba-toggle__btn--active) {
+    background-color: var(--bg-surface-hover);
+    color: var(--text-primary);
+}
+
+.ba-toggle__btn--active {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.ba-toggle__btn--active:hover {
+    background-color: var(--accent-primary-hover);
+}

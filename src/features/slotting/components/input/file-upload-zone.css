@@ -1,0 +1,106 @@
+.file-upload-zone {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+}
+
+.file-upload-zone__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.file-upload-zone__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.file-upload-zone__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+}
+
+.file-upload-zone__dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-xl) var(--space-md);
+    background-color: var(--bg-input);
+    border: 2px dashed var(--border-default);
+    border-radius: var(--radius-sm);
+    min-height: 160px;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.file-upload-zone__dropzone[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.file-upload-zone__icon {
+    color: var(--text-muted);
+}
+
+.file-upload-zone__text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.file-upload-zone__hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.file-upload-zone__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-surface-hover);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.file-upload-zone__button:hover:not(:disabled) {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-surface);
+}
+
+.file-upload-zone__button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.file-upload-zone__notice {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border-default);
+}

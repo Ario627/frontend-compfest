@@ -1,0 +1,22 @@
+.disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+}
+
+.disclaimer svg {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.disclaimer__text {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-muted);
+    font-style: italic;
+}
