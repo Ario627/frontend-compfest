@@ -1,34 +1,32 @@
-import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
-import path from 'path'
+import { defineConfig } from "vitest/config";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] })
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    target: 'es2020',
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (!id.includes('node_modules')) return;
-          if (id.includes('react') || id.includes('react-dom')) return 'vendor-react';
-          if (id.includes('konva') || id.includes('react-konva')) return 'vendor-canvas';
-          if (id.includes('zod')) return 'vendor-forms';
-          if (id.includes('@tanstack')) return 'vendor-query';
-          if (id.includes('lucide-react')) return 'vendor-icons';
-          if (id.includes('framer-motion')) return 'vendor-motion';
-          return 'vendor';
-        },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./test/setup.ts"],
+    include: ["test/**/*.test.{ts,tsx}"],
+    coverage: {
+      provider: "v8",
+      include: [
+        "src/features/slotting/utils/**",
+        "src/features/slotting/schemas/**",
+        "src/features/slotting/store/**",
+        "src/features/slotting/hooks/**",
+        "src/shared/**",
+      ],
+      thresholds: {
+        statements: 70,
       },
     },
-    chunkSizeWarningLimit: 600,
+    css: false,
   },
-})
+});
