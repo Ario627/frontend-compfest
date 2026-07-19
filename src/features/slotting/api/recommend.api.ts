@@ -14,5 +14,5 @@ export async function postRecommend(
   }
 
   const request: RecommendRequest = { dataset: datasetId };
-  return apiClient.post<RecommendResponse>("/api/v1/recommend", request);
+  return apiClient.post<RecommendResponse>("/recommend", request);
 }

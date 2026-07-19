@@ -32,9 +32,7 @@ export function InputPage({
         <h1 id="input-page-title" className="input-page__title">
           Warehouse Slotting Optimizer
         </h1>
-        <p className="input-page__subtitle">
-          Optimalkan penempatan produk dan rute picking gudang Anda dengan analisis AI
-        </p>
+        
       </header>
 
       <div className="input-page__panels">
@@ -79,8 +77,7 @@ export function InputPage({
 
       <footer className="input-page__footer">
         <p className="input-page__disclaimer">
-          <strong>Catatan:</strong> Data gudang bersifat sintetis untuk keperluan demo. 
-          Granularitas analisis pada level kategori produk, bukan SKU individual.
+          <strong>Catatan:</strong> Data gudang bersifat sintetis untuk saat ini.
         </p>
       </footer>
     </main>
