@@ -1,4 +1,4 @@
-# 🏭 Compfest Frontend — Slotting & Picking Optimization
+# Compfest Frontend — Slotting & Picking Optimization
 
 A single-page warehouse slotting-and-picking optimisation dashboard built with **React 19**, **TypeScript 6**, and **Vite 8**. The application visualises warehouse layouts, compares "before vs. after" slotting configurations, renders picking routes on an HTML5 Canvas (Konva), and displays distance-saving metrics — all driven by a state-machine UI flow.
 
@@ -344,8 +344,8 @@ A lightweight wrapper around `fetch` with:
 
 | Module | Method | Endpoint | Purpose |
 |---|---|---|---|
-| `demo.api.ts` | `GET` | `/api/demo/datasets` | Fetch available demo dataset list |
-| `recommend.api.ts` | `POST` | `/api/recommend` | Submit dataset for slotting optimisation |
+| `demo.api.ts` | `GET` | `/demo/datasets` | Fetch available demo dataset list |
+| `recommend.api.ts` | `POST` | `/recommend` | Submit dataset for slotting optimisation |
 
 Both modules validate responses with Zod schemas before returning typed data to hooks.
 
