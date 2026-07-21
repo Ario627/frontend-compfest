@@ -1,78 +1,98 @@
+
 .wg-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-md);
 }
+
 
 .wg-legend {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    padding: var(--space-sm) 0;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-input);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
 }
 
 .wg-legend__item {
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
+    padding: 2px 8px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-full);
 }
 
 .wg-legend__swatch {
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    border: 1px solid rgba(232, 237, 242, 0.15);
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(148, 163, 184, 0.15);
 }
 
 .wg-legend__label {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-secondary);
     font-family: var(--font-sans);
+    font-weight: 500;
 }
+
 
 .wg-canvas-wrapper {
-  position: relative;
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  background-color: var(--bg-input);
-  display: flex;
-  justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--bg-input);
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
 }
 
+
 .wg-reset-btn {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  z-index: 5;
-  font-size: 12px;
-  padding: var(--space-xs) var(--space-sm);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  color: var(--text-secondary);
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  transition: background-color 150ms ease, border-color 150ms ease;
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    z-index: 5;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: var(--bg-surface);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-default);
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: all var(--transition-fast);
+    cursor: pointer;
 }
 
 .wg-reset-btn:hover {
-  background-color: var(--bg-surface-hover);
-  border-color: var(--text-muted);
-  color: var(--text-primary);
+    background: var(--bg-surface-hover);
+    border-color: var(--text-muted);
+    color: var(--text-primary);
 }
+
 
 .wg-tooltip {
     position: absolute;
     pointer-events: none;
-    background-color: var(--bg-surface);
+    background: var(--bg-surface-solid);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--border-default);
-    border-radius: var(--radius-sm);
-    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
     z-index: 10;
     white-space: nowrap;
+    box-shadow: var(--shadow-lg);
 }
 
 .wg-tooltip__product {
@@ -85,6 +105,6 @@
 .wg-tooltip__location {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-top: 2px;
 }

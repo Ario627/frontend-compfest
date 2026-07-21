@@ -1,35 +1,85 @@
-.ba-toggle {
-    display: inline-flex;
-    border: 1px solid var(--border-default);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+
+.bat-container {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
 }
 
-.ba-toggle__btn {
-    padding: var(--space-sm) var(--space-md);
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background-color: var(--bg-surface);
-    border: none;
-    transition: background-color 150ms ease, color 150ms ease;
+.bat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
-.ba-toggle__btn:first-child {
-    border-right: 1px solid var(--border-default);
+.bat-btn:hover:not(.bat-btn--active) {
+  color: var(--text-secondary);
+  background: var(--bg-surface);
 }
 
-.ba-toggle__btn:hover:not(.ba-toggle__btn--active) {
-    background-color: var(--bg-surface-hover);
-    color: var(--text-primary);
+.bat-btn--active {
+  background: var(--bg-surface-solid);
+  color: var(--accent-primary);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
 }
 
-.ba-toggle__btn--active {
-    background-color: var(--accent-primary);
-    color: var(--bg-primary);
+.bat-btn--active-success {
+  color: var(--accent-success);
+  border-color: rgba(16, 185, 129, 0.3);
+  background: var(--accent-success-glow);
 }
 
-.ba-toggle__btn--active:hover {
-    background-color: var(--accent-primary-hover);
+.bat-btn__label {
+  font-weight: 600;
+}
+
+.bat-btn__badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bat-btn--active .bat-btn__badge {
+  background: var(--accent-primary-glow);
+  color: var(--accent-primary);
+}
+
+.bat-btn__badge--success {
+  background: var(--accent-success-glow);
+  color: var(--accent-success);
+}
+
+.bat-btn--active-success .bat-btn__badge--success {
+  background: var(--accent-success-glow);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+@media (max-width: 640px) {
+  .bat-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .bat-btn__badge {
+    display: none;
+  }
 }
