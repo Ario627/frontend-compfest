@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { MapPin } from "lucide-react";
+import { MapPin, Route } from "lucide-react";
 import type { SlottingItem } from "../../types/slotting.types";
 import "./picking-sequence.css";
 
@@ -29,7 +29,10 @@ export function PickingSequence({
   if (filteredRoute.length === 0) {
     return (
       <div className="ps-container">
-        <h3 className="ps-title">Urutan Picking</h3>
+        <div className="ps-header">
+          
+          <h3 className="ps-header__title">Urutan Picking</h3>
+        </div>
         <p className="ps-empty">Rute picking tidak tersedia</p>
       </div>
     );
@@ -37,7 +40,13 @@ export function PickingSequence({
 
   return (
     <div className="ps-container">
-      <h3 className="ps-title">Urutan Picking</h3>
+      <div className="ps-header">
+        
+        <div className="ps-header__text">
+          <h3 className="ps-header__title">Urutan Picking</h3>
+          <span className="ps-header__count">{filteredRoute.length} stops</span>
+        </div>
+      </div>
       <ol className="ps-list">
         {filteredRoute.map((product, index) => {
           const item = slottingMap.get(product);

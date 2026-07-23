@@ -1,3 +1,4 @@
+import { Eye, EyeOff } from "lucide-react";
 import "./before-after-toggle.css";
 
 type ViewMode = "before" | "after";
@@ -9,22 +10,28 @@ interface BeforeAfterToggleProps {
 
 export function BeforeAfterToggle({ mode, onChange }: BeforeAfterToggleProps) {
   return (
-    <div className="ba-toggle" role="group" aria-label="Mode tampilan grid">
+    <div className="bat-container" role="radiogroup" aria-label="Pilih tampilan slotting">
       <button
         type="button"
-        className={`ba-toggle__btn ${mode === "before" ? "ba-toggle__btn--active" : ""}`}
+        role="radio"
+        aria-checked={mode === "before"}
+        className={`bat-btn ${mode === "before" ? "bat-btn--active" : ""}`}
         onClick={() => onChange("before")}
-        aria-pressed={mode === "before"}
       >
-        Sebelum
+        <EyeOff size={16} strokeWidth={2} />
+        <span className="bat-btn__label">Sebelum</span>
+        <span className="bat-btn__badge">Baseline</span>
       </button>
       <button
         type="button"
-        className={`ba-toggle__btn ${mode === "after" ? "ba-toggle__btn--active" : ""}`}
+        role="radio"
+        aria-checked={mode === "after"}
+        className={`bat-btn ${mode === "after" ? "bat-btn--active bat-btn--active-success" : ""}`}
         onClick={() => onChange("after")}
-        aria-pressed={mode === "after"}
       >
-        Sesudah
+        <Eye size={16} strokeWidth={2} />
+        <span className="bat-btn__label">Sesudah</span>
+        <span className="bat-btn__badge bat-btn__badge--success">Optimized</span>
       </button>
     </div>
   );
